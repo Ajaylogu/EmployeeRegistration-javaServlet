@@ -8,8 +8,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
-import java.util.List;
 
 import javax.servlet.ServletException; 
 import javax.servlet.annotation.WebServlet; 
@@ -37,9 +35,9 @@ public class view extends HttpServlet {
             	ResultSet rs=st.executeQuery();
             	
             	out.print("<table border='10' color='blue' width='100%'");
-            	out.print("<tr><th>id</th><th>Name</th></tr>");
+            	out.print("<tr><th>Name</th><th>EmailId</th><th>Password</th><th>Country</th></tr>");
             	while(rs.next()) {
-            		out.print("<tr><td>"+((rs.getString(1))+"</td><td>"+rs.getString(2)+"</td></tr>"));
+            		out.print("<tr><td>"+((rs.getString(1))+"</td><td>"+rs.getString(2)+"</td><td>"+(rs.getString(3))+"</td><td>"+rs.getString(4)+"</td></tr>"));
             	}
             	out.print("</table>");
         } 
